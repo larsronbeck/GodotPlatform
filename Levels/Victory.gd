@@ -6,6 +6,13 @@ func _ready():
 	totCoins = get_node("/root/Global").get_Tot_Coins()
 	Update_Victory(totCoins)
 
+func _process(delta):
+	gotoNextlevelOnButtonPressed()
+	
+func gotoNextlevelOnButtonPressed():
+	if Input.is_action_pressed("button_pressed"):
+		_on_RestartButton_pressed()
+
 func _on_RestartButton_pressed():
 	if (get_node("/root/Global").sceneCounter == 3):
 		#get_node("/root/Global").reset_Scene_Counter()
